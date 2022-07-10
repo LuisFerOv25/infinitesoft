@@ -14,12 +14,6 @@
   <!-- MDB -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.2.0/mdb.min.js"></script>
 
-  <style type="text/css">
-
-
-
-  </style>
-
 </head>
 
 <body>
@@ -89,14 +83,65 @@
         </nav><!-- Navbar -->
 
         <!--Main Navigation-->
+        <header>
+          <!-- Intro settings -->
+      
+          </style>
 
+          <!-- Background image -->
+          <div id="intro" class="p-5 text-center ">
+            <div class="d-flex justify-content-center align-items-center h-100">
+              <div class="text-white px-4">
+                <h2>¡Aprovecha!</h2>
+                <br>
+                <h3 class="mb-3">50% de descuento por tiempo limitado por compras superiores a $ 500000</h3>
+
+                <!-- Time Counter -->
+                <h3 id="time-counter" class="border border-light my-4 p-4"></h3>
+              </div>
+            </div>
+
+            <!-- Background image -->
+        </header>
+
+        <!-- Time Counter -->
+        <script type="text/javascript">
+          // Set the date we're counting down to
+          var countDownDate = new Date();
+          countDownDate.setDate(countDownDate.getDate() + 20);
+
+          // Update the count down every 1 second
+          var x = setInterval(function () {
+            // Get todays date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now an the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Display the result in the element with id="demo"
+            document.getElementById('time-counter').innerHTML =
+              days + 'd ' + hours + 'h ' + minutes + 'm ' + seconds + 's ';
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+              clearInterval(x);
+              document.getElementById('time-counter').innerHTML = 'EXPIRED';
+            }
+          }, 1000);
+        </script>
 
         <!--Main layout-->
         <main class="my-5">
           <div class="container">
             <!--Section: Content-->
             <section class="text-center">
-              <h5 class="mb-5 text-white display-6 "><strong>¿Quiénes Somos?</strong></h4>
+              <h5 class="mb-5 text-white display-6"><strong>¿Quiénes Somos?</strong></h4>
                 <label>
 
                   <p align="justify" class="text-white h4">
@@ -104,7 +149,7 @@
                     nuestros clientes, brindandoles las mejores soluciones a sus nececidades,entregando siempre
                     resultados
                     de calidad.</p>
-                    <br><br>
+                  <br><br>
 
                   <!-- mision, vision, valores-->
 
@@ -122,11 +167,11 @@
                         </div>
                         <div class="card-body">
                           <h5 class="card-title">InfiniteSoft</h5>
-                          <p class="card-text py-1" align="justify" >
+                          <p class="card-text py-1" align="justify">
                             Somos una empresa que Contribuimos a que nuestros clientes puedan crecer con soluciones de
                             software innovadoras, diseños extravagantes y tecnologías de vanguardia, es por esto que
                             ofrecemos una amplia gama de servicios para crear productos digitales lideres en el mercado
-                          </p> 
+                          </p>
 
                         </div>
                       </div>
@@ -185,7 +230,7 @@
 
 
         <div class="accordion accordion-flush" id="accordionFlushExample">
-          
+
           <h2 class="text-white h4">Nuestros Valores</h2>
 
           <div class="accordion-item">
@@ -199,7 +244,7 @@
               data-mdb-parent="#accordionFlushExample">
               <div class="accordion-body ">
                 <ul class="note note-primary">
-                  <li >Tomar decisiones ágiles y actuar con rapidez y dinamismo. </li>
+                  <li>Tomar decisiones ágiles y actuar con rapidez y dinamismo. </li>
                   <li>Trabajar en constante comunicación con el usuario., con el objetivo de alcanzar las metas
                     establecidas.</li>
 
